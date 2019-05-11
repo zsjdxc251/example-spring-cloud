@@ -1,0 +1,70 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+
+}
+apply plugin: 'groovy'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: "org.springframework.boot"
+group 'com.lesson'
+version '1.0.0'
+
+ext {
+    springCloudVersion = 'Greenwich.RELEASE'
+    springBootVersion = '2.1.4.RELEASE'
+    junitVersion = '4.12'
+}
+
+allprojects {
+
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    apply plugin: 'groovy'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: "org.springframework.boot"
+    buildDir = 'target/'
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url 'http://repo.spring.io/plugins-release' }
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    configurations.all{
+
+        exclude group: 'org.springframework.boot',module:'spring-boot-starter-logging'
+        exclude group: 'ch.qos.logback'
+    }
+}
+subprojects {
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: junitVersion
+
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter'
+
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
+
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    }
+
+
+}
+
+
+
+
+
+
+
