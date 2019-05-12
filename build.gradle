@@ -42,8 +42,8 @@ allprojects {
 
 subprojects {
 
-    apply plugin: 'war'
-    apply plugin: 'groovy'
+    apply plugin: 'java'
+//    apply plugin: 'groovy'
     apply plugin: 'application'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: "org.springframework.boot"
