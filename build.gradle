@@ -57,7 +57,7 @@ subprojects {
 
         compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 
-        annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
     }
 
     compileJava.dependsOn(processResources)
