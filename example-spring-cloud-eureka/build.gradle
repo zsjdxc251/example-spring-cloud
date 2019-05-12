@@ -3,7 +3,7 @@
 
 
 
-mainClassName = 'com.lesson.cloud.eureka.EurekaServerBootstrap'
+mainClassName = 'com.lesson.cloud.eureka.ExampleEurekaServerBootstrap'
 
 dependencies {
 
