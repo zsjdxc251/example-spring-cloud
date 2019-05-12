@@ -8,7 +8,7 @@
 dependencies {
 
 
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
 }
 
