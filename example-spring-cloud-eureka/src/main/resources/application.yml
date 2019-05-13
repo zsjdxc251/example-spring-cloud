@@ -1,0 +1,23 @@
+
+
+spring:
+  application:
+    name: example-spring-cloud-eureka
+
+server:
+  port: 9091
+
+
+
+### 注册中心的服务器，没有必要再去检索服务
+eureka:
+  client:
+    fetchRegistry: false
+  ### 取消服务器自我注册
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+  instance:
+    hostname:  example-spring-cloud-eureka-server
+
