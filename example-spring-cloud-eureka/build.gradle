@@ -10,6 +10,8 @@ dependencies {
 
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+
+    compile group: 'com.example',name:"common-boot", version:'1.0.0'
 }
 
 
