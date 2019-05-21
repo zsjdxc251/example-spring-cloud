@@ -1,0 +1,10 @@
+feign:
+  client:
+    config:
+      ## feign name
+      invokerFeignName:
+        connectTimeout: 50000
+
+spring:
+  application:
+    name: feign-consumer

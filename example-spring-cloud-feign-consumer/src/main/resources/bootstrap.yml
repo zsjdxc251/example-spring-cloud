@@ -1,0 +1,11 @@
+ribbon:
+  ServerListRefreshInterval: 1000
+
+eureka:
+  instance:
+    preferIpAddress: true
+    healthCheckPath: /actuator/health
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/
+    eurekaServiceUrlPollIntervalSeconds: 5
