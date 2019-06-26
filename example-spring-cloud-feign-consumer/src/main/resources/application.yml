@@ -7,4 +7,6 @@ feign:
 
 spring:
   application:
+  jackson:
+    default-property-inclusion: non_null
     name: feign-consumer
