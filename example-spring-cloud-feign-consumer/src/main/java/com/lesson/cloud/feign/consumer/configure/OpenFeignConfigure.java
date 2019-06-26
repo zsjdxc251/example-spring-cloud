@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableFeignClients(basePackages = {
 
-		"com.lesson.cloud.api.feign"
+		"com.lesson.cloud.api.feign.service"
 })
 public class OpenFeignConfigure {
 }
