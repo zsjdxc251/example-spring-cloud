@@ -1,12 +1,12 @@
 buildscript {
     ext {
-        springCloudVersion = 'Greenwich.RELEASE'
-        springBootVersion = '2.1.4.RELEASE'
+        springCloudVersion = 'Greenwich.SR2'
+        springBootVersion = '2.1.7.RELEASE'
         junitVersion = '4.12'
     }
 
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.7.RELEASE'
     }
 
 }
@@ -15,21 +15,23 @@ plugins {
 }
 group 'com.lesson'
 version '1.0.0'
-
-
-
 allprojects {
 
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
+
+
     repositories {
         mavenLocal()
+        //maven { url "https://artifacts.alfresco.com/nexus/content/repositories/public/" }
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         maven { url 'http://repo.spring.io/plugins-release' }
         jcenter()
         mavenCentral()
     }
+
+
 
     configurations.all{
 
@@ -44,7 +46,7 @@ subprojects {
 
     apply plugin: 'java'
 //    apply plugin: 'groovy'
-    apply plugin: 'application'
+
     apply plugin: 'io.spring.dependency-management'
     apply plugin: "org.springframework.boot"
     buildDir = 'target/'
@@ -57,7 +59,7 @@ subprojects {
 
         compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 
-        compile group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
+        compileOnly  group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
 
        
 
@@ -68,8 +70,12 @@ subprojects {
     dependencyManagement {
         imports {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+
+            //mavenBom "org.springframework.cloud:spring-boot-dependencies:${springBootVersion}"
         }
     }
+
+
 
 
 

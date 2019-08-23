@@ -2,12 +2,22 @@ plugins {
     id 'java'
 }
 
-
-
-
-
-
-
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-openfeign-core'
 }
+
+
+
+gradle.taskGraph.whenReady { graph ->
+   aaabbb =  function(x) {
+
+       logger.info(x)
+    }
+   graph.allTasks.forEach( aaabbb)
+
+    // task("bootRun").enabled = false
+
+}
+
+
+

@@ -4,8 +4,14 @@ feign:
       ## feign name
       invokerFeignName:
         connectTimeout: 50000
-
+logging:
+  level:
+    root: DEBUG
 spring:
+
+  output:
+    ansi:
+      enabled: ALWAYS
   application:
   jackson:
     default-property-inclusion: non_null

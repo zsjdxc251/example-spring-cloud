@@ -3,6 +3,7 @@ package com.lesson.cloud.api.feign.service;
 import com.lesson.cloud.api.entity.ResultApi;
 import com.lesson.cloud.api.entity.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -20,4 +21,8 @@ public interface TimeoutProviderApi {
 
 	@GetMapping("/getUser")
 	ResultApi<UserDTO> getUser();
+
+
+	@GetMapping("/getUserByParm")
+	ResultApi<UserDTO> getUserByParm(@SpringQueryMap UserDTO userDTO);
 }

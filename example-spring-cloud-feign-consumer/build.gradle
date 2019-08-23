@@ -1,7 +1,10 @@
+apply plugin: 'application'
+
+
 mainClassName = 'com.lesson.cloud.feign.consumer.FeignConsumerBootstrap'
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+
 
 
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'

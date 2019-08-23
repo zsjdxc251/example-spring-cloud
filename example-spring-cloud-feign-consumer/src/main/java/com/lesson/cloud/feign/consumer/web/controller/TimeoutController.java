@@ -4,10 +4,15 @@ import com.lesson.cloud.api.feign.service.TimeoutProviderApi;
 import com.lesson.cloud.api.entity.ResultApi;
 import com.lesson.cloud.api.entity.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 /**
  * @author zhengshijun
@@ -39,13 +44,13 @@ public class TimeoutController {
 
     @GetMapping("/index")
     public ResultApi<UserDTO> index(){
-        ResultApi<UserDTO> resultApi = timeoutProviderApi.getUser();
+        ResultApi<UserDTO> resultApi = timeoutProviderApi.getUserByParm(UserDTO.builder().age(1).build());
         return resultApi;
     }
 
 
-    @GetMapping("/getUser")
-    public ResultApi<UserDTO> getUser(){
+    @GetMapping("/getUserByParm")
+    public ResultApi<UserDTO> getUser(@RequestHeader Map<String,String> header,@SpringQueryMap UserDTO userDTO){
 
         return ResultApi.success(UserDTO.builder().age(1).gender((byte)2).username("123").password("456").build());
     }

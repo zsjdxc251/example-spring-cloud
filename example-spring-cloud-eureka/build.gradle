@@ -1,7 +1,7 @@
 
 
 
-
+apply plugin: 'application'
 
 mainClassName = 'com.lesson.cloud.eureka.ExampleEurekaServerBootstrap'
 
