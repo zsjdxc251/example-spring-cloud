@@ -9,11 +9,11 @@ dependencies {
 
 
 gradle.taskGraph.whenReady { graph ->
-   aaabbb =  function(x) {
-
-       logger.info(x)
-    }
-   graph.allTasks.forEach( aaabbb)
+//   aaabbb =  function(x) {
+//
+//       logger.info(x)
+//    }
+//   graph.allTasks.forEach( aaabbb)
 
     // task("bootRun").enabled = false
 
