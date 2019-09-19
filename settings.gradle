@@ -2,4 +2,5 @@ rootProject.name = 'example-spring-cloud'
 include 'example-spring-cloud-feign-consumer'
 include 'example-spring-cloud-eureka'
 include 'example-spring-cloud-api'
+include 'example-spring-cloud-gateway'
 

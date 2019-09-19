@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: rewritepath_route
+          uri: https://example.org
+          predicates:
+            - Path=/api/json/**
+          filters:
+#            - RewritePath=/foo/(?<segment>.*), /$\{segment}
+            - RewritePath=/api/json/order/list , /order/list
+            - RewritePath=/api/json/detail , /order/detail\
+        - uri: https://example.org
+          predicates:
+            - Path=/api/bbb/**
+          filters:
+            - StripPrefix=2

@@ -1,11 +1,11 @@
 plugins {
     id 'java'
 }
-
+apply plugin: 'application'
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-openfeign-core'
 }
-
+mainClassName = 'com.lesson.cloud.api.Main'
 
 
 gradle.taskGraph.whenReady { graph ->
@@ -15,9 +15,12 @@ gradle.taskGraph.whenReady { graph ->
 //    }
 //   graph.allTasks.forEach( aaabbb)
 
-    // task("bootRun").enabled = false
+    //task("bootJar").enabled = false
+
 
 }
+
+
 
 
 

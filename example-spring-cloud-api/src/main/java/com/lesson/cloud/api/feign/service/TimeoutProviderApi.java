@@ -6,6 +6,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author zhengshijun
@@ -25,4 +27,7 @@ public interface TimeoutProviderApi {
 
 	@GetMapping("/getUserByParm")
 	ResultApi<UserDTO> getUserByParm(@SpringQueryMap UserDTO userDTO);
+
+	@PostMapping("/getUserByParm1")
+	ResultApi<UserDTO> post(@RequestParam UserDTO userDTO);
 }

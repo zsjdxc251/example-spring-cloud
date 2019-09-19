@@ -1,0 +1,6 @@
+
+server:
+  port: 9632
+spring:
+  application:
+    name: example-gateway

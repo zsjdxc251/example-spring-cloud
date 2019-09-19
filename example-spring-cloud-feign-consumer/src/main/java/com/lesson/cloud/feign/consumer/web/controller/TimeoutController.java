@@ -6,11 +6,7 @@ import com.lesson.cloud.api.entity.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -44,13 +40,19 @@ public class TimeoutController {
 
     @GetMapping("/index")
     public ResultApi<UserDTO> index(){
-        ResultApi<UserDTO> resultApi = timeoutProviderApi.getUserByParm(UserDTO.builder().age(1).build());
+        ResultApi<UserDTO> resultApi = timeoutProviderApi.post(UserDTO.builder().age(1).build());
         return resultApi;
     }
 
 
     @GetMapping("/getUserByParm")
     public ResultApi<UserDTO> getUser(@RequestHeader Map<String,String> header,@SpringQueryMap UserDTO userDTO){
+
+        return ResultApi.success(UserDTO.builder().age(1).gender((byte)2).username("123").password("456").build());
+    }
+
+    @PostMapping("/getUserByParm1")
+    public ResultApi<UserDTO> getUser1(@RequestHeader Map<String,String> header,@RequestParam UserDTO userDTO){
 
         return ResultApi.success(UserDTO.builder().age(1).gender((byte)2).username("123").password("456").build());
     }
